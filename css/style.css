@@ -1,12 +1,11 @@
 @charset "UTF-8";
 /*
 #overview
-Github Page
- 
+Github Page Common
 */
 /*
 #styleguide
-サンプル見出し1
+ページタイトル
  
 サンプルの見出しスタイル
 hoverすると青く2倍になる
@@ -15,11 +14,95 @@ hoverすると青く2倍になる
 <h1>見出し1</h1>
 ```
 */
-h1 {
-  color: pink;
-  -webkit-transition: 200ms ease-out transform;
-  transition: 200ms ease-out transform; }
-  h1:hover {
-    color: orange;
-    -webkit-transform: translate(10px, 0);
-            transform: translate(10px, 0); }
+/* color */
+body, div, section, p, a, h1, h2, h3, h4, h5, h6, div, span, ul, li, header, main, footer {
+  font-family: 'Merriweather', sans-serif, "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Verdana, "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  margin: 0;
+  padding: 0;
+  text-decoration: none; }
+
+a {
+  color: #fff; }
+
+body {
+  width: 100%;
+  background-color: #2557E8;
+  color: #fff; }
+
+.skrollable {
+  position: fixed; }
+
+.skrollable-between {
+  display: block; }
+
+.skrollable-after {
+  display: none; }
+
+.section-wrapper {
+  width: 100%;
+  height: 90%; }
+
+.panel-wrapper {
+  margin: 0 auto;
+  width: 80%;
+  height: 90%; }
+
+.panel-title {
+  height: 60px;
+  background: skyblue; }
+
+header {
+  height: 50px;
+  right: 0;
+  position: fixed;
+  z-index: 100; }
+  header .header-menu::after {
+    content: "";
+    clear: both;
+    display: block; }
+  header .header-menu ul {
+    list-style: none; }
+  header .header-menu li {
+    display: inline-block;
+    padding: 8px 20px 0px 0px;
+    font-size: 20px; }
+  header .header-menu .bar {
+    position: relative;
+    display: none;
+    width: 60px;
+    height: 5px;
+    background-color: #fff;
+    -webkit-transition: all .3s linear;
+    transition: all .3s linear; }
+
+#top {
+  z-index: 10; }
+
+#about {
+  z-index: 11; }
+  #about .about-left {
+    width: 40%;
+    background: white;
+    float: left; }
+  #about .about-img {
+    margin: 0 auto;
+    width: 300px;
+    height: 300px;
+    background-color: limegreen; }
+  #about .about-right {
+    height: 450px;
+    width: 60%;
+    background: gray;
+    float: right; }
+
+#portfolio {
+  z-index: 12; }
+
+#skill {
+  z-index: 13; }
+
+#service {
+  z-index: 14; }
+
+#contact {
+  z-index: 15; }

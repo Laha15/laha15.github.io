@@ -1,12 +1,11 @@
 /*
 #overview
-Github Page
- 
+Github Page Common
 */
 
 /*
 #styleguide
-サンプル見出し1
+ページタイトル
  
 サンプルの見出しスタイル
 hoverすると青く2倍になる
@@ -15,11 +14,155 @@ hoverすると青く2倍になる
 <h1>見出し1</h1>
 ```
 */
-h1 {
-    color: pink;
-    transition: 200ms ease-out transform;
-    &:hover {
-        color: orange;
-        transform: translate(10px,0);
-  }
+
+// Define
+/* color */
+$main-color:#2557E8;
+$sub-color: rgba(13,44,85,0.5);
+$panel-color: rgba(35,62,195,0.2);
+$back-color: rgba(13,44,185,0.8);
+
+// Init
+body,div,section,p,a,h1,h2,h3,h4,h5,h6,div,span,ul,li,header,main,footer{
+	font-family: 'Merriweather', sans-serif, "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Verdana, "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+	margin: 0;
+	padding: 0;
+    text-decoration: none;
 }
+@mixin text-center{
+    text-align: center;
+}
+@mixin text-left{
+    text-align: left;
+}
+@mixin left{
+    float: left;
+}
+@mixin right{
+    float: right;
+}
+
+@mixin clearfix{
+    &::after{
+        content:"";
+        clear: both;
+        display: block;
+    }
+}
+
+a{
+    color: #fff;
+}
+
+body{
+    width: 100%;
+    background-color: $main-color;
+    color: #fff;
+}
+.skrollable{
+    position: fixed;
+}
+.skrollable-before{
+    // display: none;
+}
+.skrollable-between{
+    display: block;
+}
+.skrollable-after{
+    display: none;
+}
+.section-wrapper{
+    width: 100%;
+    height: 90%;
+    // @include clearfix;
+}
+.panel-wrapper{
+    margin:0 auto;
+    width: 80%;
+    height: 90%;
+    // @include clearfix;
+}
+.panel-title{
+    height: 60px;
+    background:skyblue;
+}
+
+header{
+    height: 50px;
+    right: 0;
+    position:fixed;
+    z-index: 100;
+    .header-menu{
+        @include clearfix;
+
+        & ul{
+            list-style: none;
+        }
+        & li{
+            display: inline-block;
+            padding: 8px 20px 0px 0px;
+            font-size: 20px;
+        }
+
+        & .bar{
+            position: relative;
+            display: none;
+            width: 60px;
+            height: 5px;
+            background-color: #fff;
+            transition: all .3s linear;
+        }
+    }    
+}
+
+
+#top{
+    // background-color: $main-color;
+    z-index: 10;
+}
+
+#about{
+    // background-color: $sub-color;
+    z-index: 11;
+    & .about-left{
+        width: 40%;
+        background: white;
+        @include left;
+    }
+    & .about-img{
+        margin: 0 auto;
+        width: 300px;
+        height: 300px;
+        background-color: limegreen;
+    }
+
+    & .about-right{
+        height: 450px;
+        width: 60%;
+        background: gray;
+        @include right;
+    }
+}
+#portfolio{
+    // background-color: $main-color;
+        z-index: 12;
+}
+#skill{
+    // background-color: $main-color;
+        z-index: 13;
+}
+#service{
+    // background-color: $panel-color;
+        z-index: 14;
+}
+#contact{
+        z-index: 15;
+}
+
+
+
+
+
+
+
+
