@@ -21,9 +21,10 @@ $main-color:#2557E8;
 $sub-color: rgba(13,44,85,0.5);
 $panel-color: rgba(35,62,195,0.2);
 $back-color: rgba(13,44,185,0.8);
+$cust-red: rgba(209,48,48,1);
 
 // Init
-body,div,section,p,a,h1,h2,h3,h4,h5,h6,div,span,ul,li,header,main,footer{
+body,div,section,p,a,h1,h2,h3,h4,h5,h6,div,span,ul,li,i,header,main,footer{
 	font-family: 'Merriweather', sans-serif, "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Verdana, "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
 	margin: 0;
 	padding: 0;
@@ -41,6 +42,12 @@ body,div,section,p,a,h1,h2,h3,h4,h5,h6,div,span,ul,li,header,main,footer{
 @mixin right{
     float: right;
 }
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}
 
 @mixin clearfix{
     &::after{
@@ -51,13 +58,13 @@ body,div,section,p,a,h1,h2,h3,h4,h5,h6,div,span,ul,li,header,main,footer{
 }
 
 a{
-    color: #fff;
+    color: #303030;
 }
 
 body{
     width: 100%;
-    background-color: $main-color;
-    color: #fff;
+    background-color: #fff;
+    color: #303030;
 }
 .skrollable{
     position: fixed;
@@ -73,32 +80,52 @@ body{
 }
 .section-wrapper{
     width: 100%;
-    height: 90%;
+    height: 100%;
     // @include clearfix;
 }
 .panel-wrapper{
     margin:0 auto;
     width: 80%;
-    height: 90%;
-    // @include clearfix;
+    height: 100%;
 }
 .panel-title{
-    height: 60px;
-    background:skyblue;
+    text-align: center;
+    padding-top: 20px;
+    // height: 40px;
+    font-size: 30px;
+    @include clearfix;
+    // background:skyblue;
+}
+
+.content{
+    width: 100%;
+    padding-top: 20px;
+    font-size: 17px;
+    // background:gray;
+    height: 100%;
 }
 
 header{
     height: 50px;
+    width: 100%;
+    background: #fff;
     right: 0;
     position:fixed;
     z-index: 100;
+    box-shadow: 2px 2px 2px gray;
+    #txt{
+        float: left;
+        // background:gray;
+    }
     .header-menu{
         @include clearfix;
-
+        float: right;
+        background-color: #fff;
         & ul{
             list-style: none;
         }
         & li{
+            line-height: 30px;
             display: inline-block;
             padding: 8px 20px 0px 0px;
             font-size: 20px;
@@ -109,60 +136,243 @@ header{
             display: none;
             width: 60px;
             height: 5px;
-            background-color: #fff;
+            background-color: #303030;
             transition: all .3s linear;
         }
     }    
 }
 
-
+#txt{
+    font-family: 'Anton', sans-serif;
+    padding-top: 5px;
+    padding-left: 10px;
+}
 #top{
-    // background-color: $main-color;
     z-index: 10;
+    #canvas-container{
+        position: relative;
+        margin: 0 auto;
+        width: 800px;
+    }
+    #navi{
+        text-align: center;
+        width: 10%;
+        margin-left: 35%;
+        margin-top: 43%;
+        z-index: 1;
+        position: absolute;
+        font-size: 30px;
+        cursor: pointer;
+        animation:anime 1s linear infinite alternate;
+    }
+    @keyframes anime{
+        from{
+        margin-top: 43%;
+        }
+        to{
+        margin-top: 41%;
+        }
+    }
 }
 
 #about{
-    // background-color: $sub-color;
+    background-color:#303030;
     z-index: 11;
+    color: #fff;
+
+    & .name{
+        text-align: center;
+        margin:0 auto;
+        height: 30px;
+        width: 300px;
+        margin-bottom: 40px;
+        border-bottom: 2px solid #fff;
+    }
     & .about-left{
         width: 40%;
-        background: white;
+        // background: red;
         @include left;
     }
     & .about-img{
-        margin: 0 auto;
-        width: 300px;
+        float: right;
+        width: 200px;
         height: 300px;
-        background-color: limegreen;
+        // background-color: limegreen;
+        img{
+            width: 200px;
+            height: 200px;
+        }
     }
 
     & .about-right{
-        height: 450px;
-        width: 60%;
-        background: gray;
+        height: 300px;
+        width: 43%;
+        color:#fff;
+        // background: gray;
         @include right;
+        margin-right: 100px;
+        line-height: 1.5;
+    }
+}
+
+
+#skill{
+    background-image: url(../img/pc.jpg);
+    // background-color: #303030;
+    background-size: cover;
+    color:#fff;
+    & .panel-wrapper::before{
+        top: 20px;
+        content: "";
+        // background-image: inherit;
+        // position: absolute;
+        left: 5%;
+        width: 90%;
+        height: 90%;
+        z-index: -10;
+        position: absolute;
+        // display: block;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-image: url(../img/pc.jpg);
+            // background-size: cover;
+        filter:blur(5px);   
+        border-radius: 10px;
+    }
+    .skill-box{
+        width: 50%;
+        // background: gray;
+        display: inline-block;
+    }
+    .skill-info{
+        margin-bottom: 5px;
+    }
+    .skill-bar{
+        // background: blue;
+        width: 370px;
+        & img{
+            filter:grayscale(40%);
+            width: 60px;
+            margin-right: 10px;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        .skill-lang{
+            margin-top: 18px;
+            background: #848484;
+            position: absolute;
+            height: 22px;
+            transition:all 1s linear forwards;
+            display: inline-block;
+            text-align: center;
+        }
+        .back{
+            margin-top: 18px;
+            position: absolute;
+            border: 1px #6B6B6B solid;
+            height: 20px;
+            background: #303030;
+            width: 300px;
+            display: inline-block;
+        }
+    }
+}
+#service{
+    // background-color: $panel-color;
+    z-index: 14;
+    .col{
+        width: 800px;
+        // background:blue;
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+    .box{
+        // border-radius: 50%;
+        // border:2px solid $main-color;
+        width: 250px;
+        height: 210px;
+        // background-color: #303030;
+        color: #303030;
+        display: inline-block;
+        overflow: hidden;
+        & h3{
+            text-align: center;
+            padding-bottom: 10px;
+        }
+        & p{
+            font-size: 14px;
+            text-align: center;
+        }
+    }
+    .box:not(:last-child){
+        margin-right: 15px;
+    }
+
+    .icon{
+        font-size: 80px;
+        text-align: center;
     }
 }
 #portfolio{
     // background-color: $main-color;
         z-index: 12;
 }
-#skill{
-    // background-color: $main-color;
-        z-index: 13;
-}
-#service{
-    // background-color: $panel-color;
-        z-index: 14;
-}
 #contact{
-        z-index: 15;
+    z-index: 15;
+    background-color: #303030;
+    color: #fff;
+    .social{
+        display: inline-block;
+        font-size: 120px;
+        // background:pink;
+        width: 120px;
+        height: 120px;
+        margin-right: 20px;
+        cursor: pointer;
+    }
+    .social:hover{
+        color: #aaa;
+    }
+    .logo{
+        // padding-top: 50px;
+        background: url("../img/logo.png") no-repeat;
+        background-size: 100px 100px;
+        width: 100px;
+        height: 100px;
+        cursor: pointer;
+    }
+    .logo:hover{
+        background: url("../img/hover.png") no-repeat;
+        background-size: 100px 100px;
+    }
+
+    .sns{
+        width: 415px;
+        margin: 0 auto;
+        margin-bottom: 60px;
+    }
+
+    .worker{
+        width: 500px;
+        margin: 0 auto;
+        line-height: 2;
+        & a::before{
+            content:">>"
+        }
+        & a{
+            color: #fff;
+            font-size: 20px;
+        }
+        & a:hover{
+            color:#aaa;
+        }
+    }
+
+    #copyright{
+        margin-top: 30px;
+        height: 20px;
+        text-align: center;
+    }
 }
-
-
-
-
-
-
 
 

@@ -41,3 +41,15 @@ function divText(text){
 	ary=text.split('');
         return ary;
 }
+
+$top = document.body;
+function page_scroll(target){
+	var scroll = $top.scrollTop;
+	$('html,body').animate({scrollTop: target}, 500, 'swing');
+}
+$('#navi').click(function(){page_scroll(3000)});
+$('#about-link').click(function(){page_scroll(3000)});
+$('#skill-link').click(function(){page_scroll(8500)});
+$('#service-link').click(function(){page_scroll(10000)});
+$('#portfolio-link').click(function(){page_scroll(13500)});
+$('#contact-link').click(function(){page_scroll(18000)});
