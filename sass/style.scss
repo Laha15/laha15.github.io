@@ -294,13 +294,18 @@ header{
     color: #fff;
     .social{
         display: inline-block;
-        font-size: 120px;
         width: 120px;
         height: 120px;
         margin-right: 20px;
         cursor: pointer;
     }
-    .social:hover{
+    .social > a{
+        color: #fff;
+        font-size: 120px;
+        width: 120px;
+        height: 120px;
+    }
+    .social >a:hover{
         color: #aaa;
     }
     .logo{

@@ -236,12 +236,16 @@ header {
   color: #fff; }
   #contact .social {
     display: inline-block;
-    font-size: 120px;
     width: 120px;
     height: 120px;
     margin-right: 20px;
     cursor: pointer; }
-  #contact .social:hover {
+  #contact .social > a {
+    color: #fff;
+    font-size: 120px;
+    width: 120px;
+    height: 120px; }
+  #contact .social > a:hover {
     color: #aaa; }
   #contact .logo {
     background: url("../img/logo.png") no-repeat;
