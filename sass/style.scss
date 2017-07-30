@@ -1,20 +1,3 @@
-/*
-#overview
-Github Page Common
-*/
-
-/*
-#styleguide
-ページタイトル
- 
-サンプルの見出しスタイル
-hoverすると青く2倍になる
- 
-```
-<h1>見出し1</h1>
-```
-*/
-
 // Define
 /* color */
 $main-color:#2557E8;
@@ -49,6 +32,10 @@ body,div,section,p,a,h1,h2,h3,h4,h5,h6,div,span,ul,li,i,header,main,footer{
     float: right;
 }
 
+.content-top{
+    padding-top: 40px;
+}
+
 @mixin clearfix{
     &::after{
         content:"";
@@ -70,7 +57,6 @@ body{
     position: fixed;
 }
 .skrollable-before{
-    // display: none;
 }
 .skrollable-between{
     display: block;
@@ -81,28 +67,26 @@ body{
 .section-wrapper{
     width: 100%;
     height: 100%;
-    // @include clearfix;
 }
 .panel-wrapper{
     margin:0 auto;
-    width: 80%;
+    // width: 80%;
     height: 100%;
 }
 .panel-title{
     text-align: center;
     padding-top: 20px;
-    // height: 40px;
     font-size: 30px;
     @include clearfix;
-    // background:skyblue;
 }
 
 .content{
-    width: 100%;
-    padding-top: 20px;
+    width: 850px;
+    margin:0 auto;
+    // padding-top: 20px;
     font-size: 17px;
-    // background:gray;
     height: 100%;
+    // background:orange;
 }
 
 header{
@@ -115,7 +99,6 @@ header{
     box-shadow: 2px 2px 2px gray;
     #txt{
         float: left;
-        // background:gray;
     }
     .header-menu{
         @include clearfix;
@@ -157,8 +140,8 @@ header{
     #navi{
         text-align: center;
         width: 10%;
-        margin-left: 35%;
-        margin-top: 43%;
+        margin-left: 45%;
+        margin-top: 500px;
         z-index: 1;
         position: absolute;
         font-size: 30px;
@@ -167,10 +150,10 @@ header{
     }
     @keyframes anime{
         from{
-        margin-top: 43%;
+        margin-top: 500px;
         }
         to{
-        margin-top: 41%;
+        margin-top: 470px;
         }
     }
 }
@@ -189,15 +172,15 @@ header{
         border-bottom: 2px solid #fff;
     }
     & .about-left{
-        width: 40%;
-        // background: red;
+        width: 300px;
         @include left;
     }
     & .about-img{
-        float: right;
+        // float: right;
+        margin: 0 auto;
+        // background: pink;
         width: 200px;
         height: 300px;
-        // background-color: limegreen;
         img{
             width: 200px;
             height: 200px;
@@ -206,11 +189,11 @@ header{
 
     & .about-right{
         height: 300px;
-        width: 43%;
+        width: 500px;
         color:#fff;
-        // background: gray;
         @include right;
-        margin-right: 100px;
+        // background:gray;
+        // margin-right: 100px;
         line-height: 1.5;
     }
 }
@@ -218,42 +201,36 @@ header{
 
 #skill{
     background-image: url(../img/pc.jpg);
-    // background-color: #303030;
     background-size: cover;
     color:#fff;
     & .panel-wrapper::before{
         top: 20px;
         content: "";
-        // background-image: inherit;
-        // position: absolute;
         left: 5%;
         width: 90%;
         height: 90%;
         z-index: -10;
         position: absolute;
-        // display: block;
         background-size: cover;
         background-repeat: no-repeat;
         background-image: url(../img/pc.jpg);
-            // background-size: cover;
         filter:blur(5px);   
         border-radius: 10px;
     }
     .skill-box{
-        width: 50%;
-        // background: gray;
+        width: 400px;
         display: inline-block;
     }
     .skill-info{
         margin-bottom: 5px;
     }
     .skill-bar{
-        // background: blue;
+        margin-bottom: 20px;
         width: 370px;
         & img{
             filter:grayscale(40%);
             width: 60px;
-            margin-right: 10px;
+            margin-right: 15px;
             margin-bottom: 20px;
             display: inline-block;
         }
@@ -278,20 +255,15 @@ header{
     }
 }
 #service{
-    // background-color: $panel-color;
     z-index: 14;
     .col{
-        width: 800px;
-        // background:blue;
+        width: 850px;
         margin: 0 auto;
         margin-bottom: 20px;
     }
     .box{
-        // border-radius: 50%;
-        // border:2px solid $main-color;
-        width: 250px;
+        width: 30%;
         height: 210px;
-        // background-color: #303030;
         color: #303030;
         display: inline-block;
         overflow: hidden;
@@ -314,7 +286,6 @@ header{
     }
 }
 #portfolio{
-    // background-color: $main-color;
         z-index: 12;
 }
 #contact{
@@ -324,7 +295,6 @@ header{
     .social{
         display: inline-block;
         font-size: 120px;
-        // background:pink;
         width: 120px;
         height: 120px;
         margin-right: 20px;
@@ -334,7 +304,6 @@ header{
         color: #aaa;
     }
     .logo{
-        // padding-top: 50px;
         background: url("../img/logo.png") no-repeat;
         background-size: 100px 100px;
         width: 100px;
@@ -374,5 +343,4 @@ header{
         text-align: center;
     }
 }
-
 

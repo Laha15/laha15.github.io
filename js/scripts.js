@@ -1,7 +1,7 @@
-var txt = document.getElementById('txt');
+// var txt = document.getElementById('txt');
  
 //文字を表示、ランダムな文字の後に「penguin」と表示される
-setText(txt, "My Programming Activity");
+// setText(txt, "My Programming Activity");
  
  
  

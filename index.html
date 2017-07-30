@@ -16,7 +16,7 @@
 </head>
 <body>
 	<header>
-		<h1 id="txt" >Top</h1>
+		<h1 id="txt" >My Programming Activity</h1>
 		<div class="header-menu">
 			<ul>
 				<li><a id="about-link" href="#about">About</a></li>
@@ -36,21 +36,21 @@
 	<main>
 	<section id="top" class="section-wrapper" data-1000="top:10%;" data-2000="top:-100%;">
 		<div class="panel-wrapper">
-		<div class="content">
+		<!-- <div class="content"> -->
 			<div id="navi">
 				⬇︎
 			</div>
 			<div id="canvas-container">
 				<div id="canvas-area"></div>
 			</div>
-		</div>
+		<!-- </div> -->
 		</div>
 	</section>
 	
 	<section id="about" class="section-wrapper" data-2000="top:100%;"  data-3000="top:8%;" data-5000="top:8%;" data-5500="top:-100%;">
 		<div class="panel-wrapper">
 			<div class="panel-title"><h1>About</h1></div>
-			<div class="content">
+			<div class="content content-top">
 				<div class="name">
 					<h3>HN: Laha</h3>
 				</div>
@@ -74,7 +74,7 @@
 
 		<div class="panel-wrapper">
 			<div class="panel-title"><h1>Skill Set</h1></div>
-			<div class="content">
+			<div class="content content-top">
 <!-- 				<div class="chart" data-percent="90">
 					<p class="percent"></p>
 				</div> -->
@@ -99,6 +99,12 @@
 					</div>
 				</div>
 				<div class="skill-box right">
+					<p class="skill-info">PHP</p>
+					<div class="skill-bar">
+						<img src="img/php.png" style="margin-top: 10px;">
+						<div class="back"></div>
+						<div class="skill-lang" data-6500="width:0px;" data-7300="width:120px;" data-9000="width:120px;">40%</div>
+					</div>
 					<p class="skill-info">Illustlator</p>
 					<div class="skill-bar">
 						<img src="img/illust.png">
@@ -119,7 +125,7 @@
 	<section id="service" class="section-wrapper" data-9000="top:100%;"  data-10000="top:8%;" data-12000="top:8%;" data-12500="top:-100%;">
 		<div class="panel-wrapper">
 			<div class="panel-title"><h1>Service</h1></div>
-			<div class="content">
+			<div class="content content-top">
 				<div class="col">
 					<div class="box">
 						<div class="icon"><i class="fa fa-tablet" aria-hidden="true"></i></div>
@@ -168,7 +174,7 @@
 	<section id="contact" class="section-wrapper" data-16000="top:100%;"  data-18000="top:8%;" data-end="top:8%;">
 		<div class="panel-wrapper">
 			<div class="panel-title"><h1>Contact</h1></div>
-			<div class="content">
+			<div class="content content-top">
 				<div class="sns">
 					<div class="social">
 						<i class="fa fa-github-alt" aria-hidden="true"></i>
@@ -229,32 +235,27 @@
 		}
 	});
 
-	var Engine = Matter.Engine, //物理シュミレーションおよびレンダリングを管理するコントローラーとなるメソッド
-	World = Matter.World, //物理演算領域の作成・操作するメソッドを含む
-	Body = Matter.Body, //剛体のモデルを作成・操作するメソッドを含む
-	Bodies = Matter.Bodies, //一般的な剛体モデルを作成するメソッドを含む
-	Constraint = Matter.Constraint, //制約を作成・操作するメソッドを含む
+	var Engine = Matter.Engine, 
+	World = Matter.World, 
+	Body = Matter.Body,
+	Bodies = Matter.Bodies, 
+	Constraint = Matter.Constraint,
 	Composites = Matter.Composites,
 	Common = Matter.Common,
-	Vertices = Matter.Vertices, //頂点のセットを作成・操作するメソッドを含む
-	MouseConstraint = Matter.MouseConstraint; //マウスの制約を作成するためのメソッドが含む
+	Vertices = Matter.Vertices, 
+	MouseConstraint = Matter.MouseConstraint; 
 
-	// Matter.jsのEngineを作成
 	var container = document.getElementById('canvas-area');
 	var engine = Engine.create(container, {
-		render: { //レンダリングの設定
+		render: {
 			options: {
-				wireframes: false, //ワイヤーフレームモードをoff
-				width: 800, //canvasのwidth(横幅)
-				height: 510, //canvasのheight(高さ)
+				wireframes: false, 
+				width: 800, 
+				height: 510, 
 				background: 'rgba(0, 0, 0, 0)'
 			}
 		}
 	});
-
-	// マウス操作を追加
-	// var mouseConstraint = MouseConstraint.create(engine);
-	// World.add(engine.world, mouseConstraint);
 
 	//床を作る
 	World.add(engine.world, [Bodies.rectangle(400, 520, 810, 20, {
@@ -291,17 +292,17 @@
 		var y = 0 - rnd * 120;
 		var img_num = i % 10 + 1;
 		World.add(engine.world, [
-			Bodies.circle(x, y, 55, { //ボール
-				density: 0.0005, // 密度: 単位面積あたりの質量
-				frictionAir: 0.06, // 空気抵抗(空気摩擦)
-				restitution: 0.1, // 弾力性
-				friction: 0.01, // 本体の摩擦
-				render: { //ボールのレンダリングの設定
-					sprite: { //スプライトの設定
-						texture: './img/100/'+ img_num  +'.png' //スプライトに使う画像を指定
+			Bodies.circle(x, y, 55, {
+				density: 0.0005, 
+				frictionAir: 0.06, 
+				restitution: 0.1, 
+				friction: 0.01, 
+				render: {
+					sprite: {
+						texture: './img/100/'+ img_num  +'.png' 
 					}
 				},
-				timeScale: 2 //時間の倍率を設定(1で1倍速)
+				timeScale: 2 
 			}),
 			]);
 	}
