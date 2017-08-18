@@ -229,6 +229,18 @@ header {
 
 #portfolio {
   z-index: 12; }
+  #portfolio .thumb-panel {
+    width: 300px;
+    height: 155px;
+    overflow: hidden; }
+  #portfolio .thumbnail {
+    width: 300px; }
+  #portfolio .thumbnail:hover {
+    -webkit-filter: grayscale(90%);
+            filter: grayscale(90%);
+    width: 350px;
+    -webkit-transition: all .3s linear;
+    transition: all .3s linear; }
 
 #contact {
   z-index: 15;

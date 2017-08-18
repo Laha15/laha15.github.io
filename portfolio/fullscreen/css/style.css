@@ -1,0 +1,77 @@
+body, header, main, sidebar, footer, ul, li, p, a, div, span, h1 {
+  margin: 0;
+  padding: 0;
+  clear: both;
+  text-decoration: none;
+  list-style: none;
+  line-height: 2;
+  color: #fff;
+  font-family: 'Bitter', serif; }
+
+body {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.2)), to(rgba(0, 0, 0, 0.2))), url("../img/dark.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../img/dark.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; }
+
+header {
+  height: 120px;
+  width: 960px;
+  margin: 0 auto; }
+
+.logo a {
+  font-family: 'Sedgwick Ave', cursive;
+  float: left;
+  width: 200px;
+  font-size: 35px;
+  margin-top: 20px; }
+
+nav {
+  width: 500px;
+  float: right; }
+
+.global-nav {
+  float: right;
+  margin-top: 40px; }
+  .global-nav li {
+    margin-left: 30px;
+    display: inline-block; }
+    .global-nav li a:hover {
+      border-bottom: 2px solid #fff;
+      padding-bottom: 3px; }
+
+#wrap {
+  clear: both;
+  margin-top: 10px; }
+  #wrap .content {
+    width: 960px;
+    margin: 0 auto; }
+    #wrap .content h1 {
+      word-wrap: break-word;
+      font-size: 60px;
+      line-height: 1;
+      padding: 10px 0 0px 0; }
+    #wrap .content .about {
+      margin-top: 40px;
+      margin-bottom: 30px; }
+    #wrap .content .btn a {
+      text-align: center;
+      line-height: 45px;
+      font-size: 17px;
+      width: 150px;
+      height: 45px;
+      background: #0F6BD4;
+      border-radius: 7px;
+      display: block;
+      border: 3px solid #0F6BD4; }
+    #wrap .content .btn a:hover {
+      background: #fff;
+      border-color: #0F6BD4;
+      color: #0F6BD4; }
+
+footer {
+  font-size: 12px;
+  width: 960px;
+  margin: 0 auto;
+  margin-top: 80px; }

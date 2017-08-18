@@ -286,7 +286,20 @@ header{
     }
 }
 #portfolio{
-        z-index: 12;
+    z-index: 12;
+    .thumb-panel{
+        width: 300px;
+        height: 155px;
+        overflow: hidden;
+    }
+    .thumbnail{
+        width: 300px;
+    }
+    .thumbnail:hover{
+        filter:grayscale(90%);
+        width: 350px;
+        transition:all .3s linear;
+    }
 }
 #contact{
     z-index: 15;
