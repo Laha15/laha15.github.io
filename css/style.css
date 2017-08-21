@@ -229,6 +229,10 @@ header {
 
 #portfolio {
   z-index: 12; }
+  #portfolio .portfolio_container {
+    width: 300px;
+    height: 205px;
+    display: inline-block; }
   #portfolio .thumb-panel {
     width: 300px;
     height: 155px;
