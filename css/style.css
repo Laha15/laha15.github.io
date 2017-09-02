@@ -1,10 +1,16 @@
 @charset "UTF-8";
 /* color */
-body, div, section, p, a, h1, h2, h3, h4, h5, h6, div, span, ul, li, i, header, main, footer {
+body, div, section, a, h1, h2, h3, h4, h5, h6, div, span, ul, li, i, header, main, footer {
   font-family: 'Merriweather', sans-serif, "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Verdana, "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
   margin: 0;
   padding: 0;
   text-decoration: none; }
+
+p {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Verdana, "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif; }
 
 .left {
   float: left; }
@@ -107,7 +113,7 @@ header {
     margin-top: 500px;
     z-index: 1;
     position: absolute;
-    font-size: 30px;
+    font-size: 48px;
     cursor: pointer;
     -webkit-animation: anime 1s linear infinite alternate;
             animation: anime 1s linear infinite alternate; }
